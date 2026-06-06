@@ -1,26 +1,233 @@
 @import "tailwindcss";
 
+@theme {
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+
+  /* Brand tokens — mode-aware via CSS vars below */
+  --color-electric: var(--electric);
+  --color-violet: var(--violet);
+  --color-neon: #39ff14;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 8s linear infinite;
+  --animate-gradient-shift: gradientShift 8s ease infinite;
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-marquee2: marquee2 25s linear infinite;
+}
+
+/* ── Mode-aware brand tokens ───────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --electric: #0095cc; /* lighter in light mode — enough contrast */
+  --violet: #6d28d9;
+  --electric-rgb: 0, 149, 204;
+  --violet-rgb: 109, 40, 217;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-shadow: 0 2px 24px rgba(0, 0, 0, 0.07);
+
+  /* Glow blobs */
+  --glow-electric: rgba(0, 149, 204, 0.08);
+  --glow-violet: rgba(109, 40, 217, 0.07);
+
+  /* Metric cards */
+  --metric-bg: rgba(0, 0, 0, 0.04);
+  --metric-border: rgba(0, 0, 0, 0.07);
+
+  /* Primary button shadow */
+  --btn-primary-shadow: 0 2px 16px rgba(0, 149, 204, 0.3);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root.dark,
+.dark {
+  --electric: #00d4ff;
+  --violet: #9d5ff5;
+  --electric-rgb: 0, 212, 255;
+  --violet-rgb: 157, 95, 245;
+
+  --glass-bg: rgba(12, 12, 22, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+
+  --glow-electric: rgba(0, 212, 255, 0.08);
+  --glow-violet: rgba(157, 95, 245, 0.08);
+
+  --metric-bg: rgba(255, 255, 255, 0.04);
+  --metric-border: rgba(255, 255, 255, 0.07);
+
+  --btn-primary-shadow: 0 2px 16px rgba(0, 212, 255, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ── Keyframes ─────────────────────────────────────────── */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marquee2 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Utilities ─────────────────────────────────────────── */
+@layer utilities {
+  /* Grid background — subtle in light, strong in dark */
+  .grid-bg {
+    background-color: hsl(var(--background));
+    background-image:
+      linear-gradient(rgba(var(--electric-rgb), 0.04) 1px, transparent 1px),
+      linear-gradient(
+        90deg,
+        rgba(var(--electric-rgb), 0.04) 1px,
+        transparent 1px
+      );
+    background-size: 48px 48px;
+  }
+
+  /* Glass — uses CSS vars so it flips automatically */
+  .glass {
+    background-color: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  /* Gradient text — electric→violet */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--electric) 0%, var(--violet) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Blue-only gradient (for metric values) */
+  .gradient-text-blue {
+    background: linear-gradient(135deg, var(--electric) 0%, var(--violet) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Metric card */
+  .metric-card {
+    background-color: var(--metric-bg);
+    border: 0.5px solid var(--metric-border);
+    transition:
+      border-color 0.2s,
+      background-color 0.2s;
+  }
+  .metric-card:hover {
+    border-color: rgba(var(--electric-rgb), 0.25);
+    background-color: rgba(var(--electric-rgb), 0.06);
+  }
+
+  /* Primary button */
+  .btn-primary {
+    padding: 0.65rem 1.4rem;
+    border-radius: 0.6rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, var(--electric), var(--violet));
+    box-shadow: var(--btn-primary-shadow);
+    transition:
+      opacity 0.2s,
+      box-shadow 0.2s,
+      transform 0.15s;
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 24px rgba(var(--electric-rgb), 0.35);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  /* Outline button — works in both modes */
+  .btn-outline {
+    padding: 0.65rem 1.4rem;
+    border-radius: 0.6rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--foreground));
+    background-color: transparent;
+    border: 0.5px solid hsl(var(--border));
+    transition:
+      background-color 0.2s,
+      border-color 0.2s;
+  }
+  .btn-outline:hover {
+    background-color: hsl(var(--muted));
+    border-color: rgba(var(--electric-rgb), 0.3);
+  }
+
+  /* Bg gradient utilities */
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+  .bg-gradient-mesh {
+    background-image:
+      radial-gradient(
+        at 40% 20%,
+        hsla(228, 100%, 74%, 0.15) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 80% 0%,
+        hsla(189, 100%, 56%, 0.1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 0% 50%,
+        hsla(355, 100%, 93%, 0.06) 0px,
+        transparent 50%
+      );
+  }
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
