@@ -52,14 +52,14 @@ export default function AboutSection() {
         style={{ background: "var(--glow-electric)" }}
       />
 
-      <div className="container mx-auto py-8 px-4">
+      <div className="container mx-auto py-8 px-6">
         {/* Section label */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
-          className="section-label mb-6"
+          className=" mb-4"
         >
           About
         </motion.div>

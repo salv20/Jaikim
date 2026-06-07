@@ -152,7 +152,7 @@ export default function HeroSection() {
         style={{ background: "var(--glow-violet)", animationDelay: "2s" }}
       />
 
-      <div className="relative z-10 container mx-auto px-4 pt-28 pb-20 w-full">
+      <div className="relative z-10 container mx-auto px-6 pt-28 pb-20 w-full">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* ── LEFT: Text content ── */}
           <motion.div
@@ -183,7 +183,7 @@ export default function HeroSection() {
             {/* Headline */}
             <motion.h1
               variants={item}
-              className="font-display text-2xl sm:text-3xl leading-[1.05] mb-4"
+              className="font-bold text-2xl sm:text-3xl leading-[1.05] mb-4"
             >
               <span className="text-foreground">Building</span>
               <span className="gradient-text"> Visibility</span>

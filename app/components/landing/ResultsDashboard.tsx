@@ -14,24 +14,24 @@ export default function ResultsDashboard() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00D4FF]/3 to-transparent pointer-events-none" />
       <div className="absolute inset-0 grid-bg opacity-40" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="container mx-auto px-6 py-8">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="section-label mb-6"
+          className=" mb-2"
         >
           Results
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+        <div className="grid lg:grid-cols-2 gap-2 items-start">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="font-display text-5xl lg:text-6xl leading-tight">
+            <h2 className="font-bold text-2xl sm:text-3xl leading-tight">
               Growth That <br />
               <span className="gradient-text italic">Speaks For Itself</span>
             </h2>
@@ -51,7 +51,10 @@ export default function ResultsDashboard() {
         </div>
 
         {/* Stats grid */}
-        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div
+          ref={ref}
+          className="grid mt-6 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}

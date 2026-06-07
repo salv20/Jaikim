@@ -16,7 +16,7 @@ export default function DifferenceSection() {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="section-label mb-6"
+          className=" mb-6"
         >
           Differentiators
         </motion.div>
