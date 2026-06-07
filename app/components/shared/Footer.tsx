@@ -1,83 +1,62 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { footerQuote, footerQuestion, siteConfig } from "@/app/utils";
+import { siteConfig } from "@/app/utils";
+
+const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Work", href: "#case-studies" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
-  const navLinks = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Work", href: "#case-studies" },
-    { label: "Contact", href: "#contact" },
-    { label: "Gallery", href: "#gallery" },
-  ];
-
   return (
     <footer className="relative border-t border-border/40 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] rounded-full bg-[#7C3AED]/5 blur-[80px] pointer-events-none" />
+      <div className="absolute inset-0 grid-bg opacity-15 pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[160px] rounded-full bg-[color:var(--violet)]/5 blur-[80px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-10 relative z-10">
-        {/* Main Quote */}
+      <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
+        {/* Top row */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl mx-auto text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="grid sm:grid-cols-3 gap-10 mb-14"
         >
-          <div className="font-display text-5xl text-[#00D4FF]/15 leading-none mb-4">
-            &ldquo;
-          </div>
-          <p className="font-display text-2xl sm:text-3xl text-foreground/80 italic leading-relaxed whitespace-pre-line">
-            {footerQuote.replace(/"/g, "")}
-          </p>
-          <div className="mt-10 pt-8 border-t border-border/40">
-            <p className="font-display text-xl sm:text-2xl font-bold gradient-text">
-              {footerQuestion}
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-border/60 to-transparent mb-12" />
-
-        {/* Footer Links Row */}
-        <div className="grid sm:grid-cols-3 gap-8 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00D4FF] to-[#7C3AED] flex items-center justify-center">
-                <span className="text-white font-bold text-sm font-mono">
-                  CJ
-                </span>
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[color:var(--electric)] to-[color:var(--violet)] flex items-center justify-center flex-shrink-0">
+                <span className="text-white font-bold text-sm ">CJ</span>
               </div>
-              <span className="font-display font-semibold">
+              <span className="font-display font-semibold text-foreground">
                 {siteConfig.name}
               </span>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-1">
               {siteConfig.title}
             </p>
-            <p className="text-xs text-muted-foreground/60 font-mono mt-2">
+            <p className="text-xs text-muted-foreground/50 ">
               {siteConfig.location}
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigation */}
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-4">
+            <h4 className="text-xs font-semibold uppercase tracking-widest gradient-text mb-2">
               Navigation
             </h4>
-            <ul className="flex flex-col -1">
+            <ul className="flex flex-col gap-0.5">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 py-1 inline-block"
                   >
                     {link.label}
                   </a>
@@ -88,19 +67,19 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-4">
+            <h4 className="text-xs font-semibold uppercase tracking-widest gradient-text mb-2">
               Contact
             </h4>
             <div className="flex flex-col gap-2">
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="text-sm text-muted-foreground hover:text-[#00D4FF] transition-colors"
+                className="text-sm text-muted-foreground hover:text-[color:var(--electric)] transition-colors duration-200"
               >
                 {siteConfig.email}
               </a>
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
               >
                 {siteConfig.phone}
               </a>
@@ -108,29 +87,31 @@ export default function Footer() {
                 href={`https://www.tiktok.com/${siteConfig.tiktok}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-[#00D4FF] transition-colors"
+                className="text-sm text-muted-foreground hover:text-[color:var(--electric)] transition-colors duration-200"
               >
-                TikTok: {siteConfig.tiktok}
+                TikTok
               </a>
               <a
                 href={`https://wa.me/${siteConfig.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-emerald-400 transition-colors"
+                className="text-sm text-muted-foreground hover:text-emerald-400 transition-colors duration-200"
               >
                 WhatsApp
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
+
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-border/50 to-transparent mb-8" />
 
         {/* Bottom bar */}
-        <div className="h-px bg-gradient-to-r from-transparent via-border/40 to-transparent mb-8" />
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground/60 font-mono">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground/50 ">
           <p>
             © {year} {siteConfig.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span>Available for new projects</span>
           </div>
