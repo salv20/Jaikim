@@ -20,11 +20,22 @@ const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID!;
 const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY!;
 
 export default function ContactSection() {
-  console.log(EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID);
+  console.log(
+    EMAILJS_PUBLIC_KEY,
+    EMAILJS_SERVICE_ID,
+    EMAILJS_TEMPLATE_ID,
+    EMAILJS_PUBLIC_KEY,
+  );
 
   const COOLDOWN_SECONDS = 600;
 
-  const [cooldown, setCooldown] = useState(0);
+  const [cooldown, setCooldown] = useState(() => {
+    if (typeof window === "undefined") return 0; // SSR guard
+    const stored = localStorage.getItem("contactCooldown");
+    if (!stored) return 0;
+    const remaining = Math.floor((Number(stored) - Date.now()) / 1000);
+    return remaining > 0 ? remaining : 0;
+  });
 
   useEffect(() => {
     if (cooldown <= 0) return;
@@ -76,8 +87,13 @@ export default function ContactSection() {
       );
       setStatus("sent");
       setCooldown(COOLDOWN_SECONDS);
+      localStorage.setItem(
+        "contactCooldown",
+        (Date.now() + COOLDOWN_SECONDS * 1000).toString(),
+      );
       setForm({ name: "", email: "", company: "", message: "" });
-    } catch {
+    } catch (error) {
+      console.error("EmailJS Error:", error);
       setStatus("error");
     }
   };
