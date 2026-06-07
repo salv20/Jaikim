@@ -128,13 +128,11 @@ export default function HeroSection() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden grid-bg"
     >
-      {/* Particle canvas */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none"
       />
 
-      {/* Cursor spotlight — mode-aware opacity */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -142,7 +140,6 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Ambient glow blobs */}
       <div
         className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-[120px] animate-pulse-slow"
         style={{ background: "var(--glow-electric)" }}

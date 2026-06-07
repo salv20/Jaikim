@@ -1,7 +1,3 @@
-// ============================================
-// ALL CONTENT DATA — EDIT HERE TO UPDATE SITE
-// ============================================
-
 export const siteConfig = {
   name: "Charles Jikeme",
   title: "Social Media Growth Strategist",
@@ -108,105 +104,6 @@ export const stats = [
     suffix: "+",
     label: "Peak Likes",
     sublabel: "Single account growth",
-  },
-];
-
-export const differenceCards = [
-  {
-    icon: "🧠",
-    title: "Audience Behaviour",
-    desc: "I study how people scroll, stop, and share — turning psychology into strategy that drives real engagement.",
-  },
-  {
-    icon: "❤️",
-    title: "Emotional Triggers",
-    desc: "Every piece of content activates specific emotional responses — curiosity, desire, FOMO, relatability — that convert viewers into followers.",
-  },
-  {
-    icon: "🔍",
-    title: "Trend Research",
-    desc: "I identify trending formats early and adapt them to your brand before they peak, maximising organic reach.",
-  },
-  {
-    icon: "📊",
-    title: "Engagement Patterns",
-    desc: "Data-driven analysis of what works. I track retention, completion rates, and shares to continuously improve.",
-  },
-  {
-    icon: "🏗️",
-    title: "Content Structures",
-    desc: "Proven hooks, pacing techniques, and narrative arcs that keep viewers watching until the last second.",
-  },
-];
-
-export const startupReasons = [
-  {
-    title: "Founder Empathy",
-    desc: "I understand the pressure of building with limited resources and need every piece of content to count.",
-    icon: "💡",
-  },
-  {
-    title: "Resource Efficiency",
-    desc: "Maximum impact with minimal budget. I know how to create high-performing content without expensive production.",
-    icon: "⚡",
-  },
-  {
-    title: "Youth Culture",
-    desc: "Deep understanding of Gen Z and millennial behaviour — the demographics that drive viral growth.",
-    icon: "🎯",
-  },
-  {
-    title: "Trend Awareness",
-    desc: "I live online. I spot emerging formats weeks before they peak and adapt them to your brand.",
-    icon: "📡",
-  },
-  {
-    title: "Fast Adaptation",
-    desc: "Startup speed is my speed. I iterate quickly, test fast, and pivot content strategies in real time.",
-    icon: "🔄",
-  },
-  {
-    title: "Startup Environments",
-    desc: "Thrives in dynamic, fast-paced environments where strategy and execution happen simultaneously.",
-    icon: "🏢",
-  },
-];
-
-export const frameworkSteps = [
-  {
-    step: "01",
-    title: "Understand The Product",
-    desc: "Deep dive into what the brand offers, its unique value proposition, and what makes it genuinely different from competitors.",
-    icon: "🔎",
-    color: "#00D4FF",
-  },
-  {
-    step: "02",
-    title: "Understand The Audience",
-    desc: "Research who the ideal viewer is — their pain points, aspirations, language, culture, and what makes them stop scrolling.",
-    icon: "👥",
-    color: "#7C3AED",
-  },
-  {
-    step: "03",
-    title: "Research Winning Content",
-    desc: "Analyse top-performing content in the niche. Study hooks, formats, trends, and engagement patterns that work right now.",
-    icon: "📊",
-    color: "#10B981",
-  },
-  {
-    step: "04",
-    title: "Adapt & Create",
-    desc: "Build content that combines proven formats with the brand's unique voice. Every video engineered for maximum retention.",
-    icon: "✨",
-    color: "#F59E0B",
-  },
-  {
-    step: "05",
-    title: "Measure Results",
-    desc: "Track views, engagement, follower growth, and conversions. Continuously optimise based on real data, not assumptions.",
-    icon: "📈",
-    color: "#EF4444",
   },
 ];
 
@@ -393,103 +290,6 @@ export const caseStudies = [
   },
 ];
 
-export const videos = [
-  {
-    id: "v1",
-    title: "Cluster Clear — Viral Growth Campaign",
-    client: "Cluster Clear",
-    views: "423,000+",
-    thumbnail: "",
-    url: "",
-    category: "Fintech",
-    date: "2025-01",
-    description:
-      "The video that drove the biggest single spike in followers and engagement for Cluster Clear.",
-    featured: true,
-  },
-  {
-    id: "v2",
-    title: "FX Lens — Trading Education Content",
-    client: "FX Lens",
-    views: "195,000+",
-    thumbnail: "",
-    url: "",
-    category: "Trading",
-    date: "2025-03",
-    description:
-      "Educational content making forex trading accessible and engaging for everyday people.",
-    featured: false,
-  },
-];
-
-export const videoCategories = [
-  "All",
-  "Fintech",
-  "Trading",
-  "Sports Tech",
-  "Beauty",
-];
-
-export const galleryCategories = [
-  "All",
-  "Analytics",
-  "Campaigns",
-  "Content Examples",
-  "Results",
-  "Clients",
-];
-
-export const galleryItems = [
-  {
-    id: "g1",
-    category: "Results",
-    alt: "Cluster Clear Growth Analytics",
-    client: "Cluster Clear",
-    placeholder: true,
-  },
-  {
-    id: "g2",
-    category: "Analytics",
-    alt: "FX Lens Dashboard",
-    client: "FX Lens",
-    placeholder: true,
-  },
-  {
-    id: "g3",
-    category: "Results",
-    alt: "Oris Hair Place Campaign Results",
-    client: "Oris Hair Place",
-    placeholder: true,
-  },
-  {
-    id: "g4",
-    category: "Campaigns",
-    alt: "Star Scout Content Example",
-    client: "Star Scout",
-    placeholder: true,
-  },
-  {
-    id: "g5",
-    category: "Analytics",
-    alt: "Views Growth Chart",
-    client: "Cluster Clear",
-    placeholder: true,
-  },
-  {
-    id: "g6",
-    category: "Content Examples",
-    alt: "Content Creation Process",
-    client: "FX Lens",
-    placeholder: true,
-  },
-];
-
-export const platforms = [
-  { name: "TikTok", icon: "📱", level: 95 },
-  { name: "Instagram", icon: "📸", level: 90 },
-  { name: "Facebook", icon: "👥", level: 80 },
-];
-
 export const tools = [
   { name: "CapCut", icon: "✂️" },
   { name: "TikTok Analytics", icon: "📊" },
@@ -498,18 +298,6 @@ export const tools = [
   { name: "Google Meet", icon: "💻" },
   { name: "ChatGPT", icon: "🤖" },
   { name: "Grok", icon: "🔮" },
-];
-
-export const coreStrengths = [
-  "Audience Psychology",
-  "Content Strategy",
-  "Trend Research",
-  "Community Growth",
-  "Startup Marketing",
-  "UGC Creation",
-  "Brand Visibility",
-  "Storytelling",
-  "Social Media Management",
 ];
 
 export const testimonials = [

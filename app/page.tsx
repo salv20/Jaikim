@@ -9,7 +9,7 @@ import CaseStudiesSection from "./components/landing/CaseStudiesSection";
 import GallerySection from "./components/landing/GallerySection";
 import TestimonialsSection from "./components/landing/TestimonialsSection";
 import ContactSection from "./components/landing/ContactSection";
-import Footer from "./components/landing/Footer";
+import Footer from "./components/shared/Footer";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
         <AboutSection />
         <ResultsDashboard />
         <CaseStudiesSection />
-        {/* <GallerySection /> */}
+        <GallerySection />
         {/* <TestimonialsSection /> */}
         <ContactSection />
       </main>

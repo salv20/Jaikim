@@ -6,6 +6,14 @@ import { footerQuote, footerQuestion, siteConfig } from "@/app/utils";
 export default function Footer() {
   const year = new Date().getFullYear();
 
+  const navLinks = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Work", href: "#case-studies" },
+    { label: "Contact", href: "#contact" },
+    { label: "Gallery", href: "#gallery" },
+  ];
+
   return (
     <footer className="relative border-t border-border/40 overflow-hidden">
       {/* Background */}
@@ -64,21 +72,14 @@ export default function Footer() {
             <h4 className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-4">
               Navigation
             </h4>
-            <ul className="flex flex-col gap-2">
-              {[
-                "About",
-                "Framework",
-                "Case Studies",
-                "Gallery",
-                "Skills",
-                "Contact",
-              ].map((link) => (
-                <li key={link}>
+            <ul className="flex flex-col -1">
+              {navLinks.map((link) => (
+                <li key={link.label}>
                   <a
-                    href={`#${link.toLowerCase().replace(" ", "-")}`}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    href={link.href}
+                    className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}

@@ -76,6 +76,13 @@
   --btn-primary-shadow: 0 2px 16px rgba(0, 212, 255, 0.2);
 }
 
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
 /* ── Keyframes ─────────────────────────────────────────── */
 @keyframes float {
   0%,

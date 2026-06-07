@@ -1,39 +1,33 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import { Sun, Moon, Menu, X, Download, Phone } from "lucide-react";
-
-// const navLinks = [
-//   { label: "Home", href: "#home" },
-//   { label: "About", href: "#about" },
-//   { label: "Framework", href: "#framework" },
-//   { label: "Case Studies", href: "#case-studies" },
-//   // { label: "Gallery", href: "#gallery" },
-//   // { label: "Videos", href: "#videos" },
-//   // { label: "Skills", href: "#skills" },
-//   // { label: "Contact", href: "#contact" },
-// ];
 
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Work", href: "#case-studies" },
   { label: "Contact", href: "#contact" },
+  { label: "Gallery", href: "#gallery" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
+
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
@@ -81,8 +75,8 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            {/* Theme Toggle */}
-            {resolvedTheme && (
+            {/* Theme Toggle — only rendered after mount to avoid hydration mismatch */}
+            {mounted && (
               <motion.button
                 onClick={toggleTheme}
                 whileHover={{ scale: 1.05 }}
@@ -116,7 +110,7 @@ export default function Navbar() {
               </motion.button>
             )}
 
-            {/* Download Portfolio */}
+            {/* Download CV */}
             <motion.a
               href="/docs/Charles-Jikeme-CV.pdf"
               download="Charles-Jikeme-CV.pdf"
@@ -192,6 +186,7 @@ export default function Navbar() {
               <Download size={14} />
               <span>Download CV</span>
             </motion.a>
+
             <div className="mt-4 pt-4 border-t border-black/5 dark:border-white/10 flex gap-2">
               <a
                 href="#contact"
