@@ -120,16 +120,10 @@ export const caseStudies = [
     description:
       "Took a fintech startup from near-zero social presence to a thriving community. The company rebranded from Pay2View to Cluster Clear during our partnership — I navigated that transition seamlessly while maintaining growth momentum.",
     results: [
-      { label: "Views", before: "43k", after: "203K+", icon: "users" },
-      {
-        label: "Total Likes",
-        before: "3,071",
-        after: "70,000+",
-        icon: "heart",
-      },
-      { label: "Peak Video", before: "", after: "423,000+ Views", icon: "eye" },
-      { label: "2nd Video", before: "", after: "120,000+ Views", icon: "eye" },
-      { label: "3rd Video", before: "", after: "76,000+ Views", icon: "eye" },
+      { label: "Views", before: "", after: "590,000+", icon: "eye" },
+      { label: "Likes", before: "", after: "70,000+", icon: "heart" },
+      { label: "Shares", before: "", after: "1,296", icon: "share" },
+      { label: "comments", before: "", after: "3,350+", icon: "bookmark" },
     ],
     highlight:
       "Company underwent a full rebrand (Pay2View → Cluster Clear) mid-campaign — growth continued uninterrupted.",
@@ -156,10 +150,10 @@ export const caseStudies = [
     description:
       "Helped FX Lens establish a credible presence in the competitive trading education space, turning complex financial concepts into engaging, accessible content that attracted genuine learners.",
     results: [
-      { label: "Followers", before: "", after: "1,840+", icon: "users" },
-      { label: "Total Likes", before: "", after: "18,800+", icon: "heart" },
-      { label: "Top Video", before: "", after: "195,000+ Views", icon: "eye" },
-      { label: "2nd Video", before: "", after: "73,000+ Views", icon: "eye" },
+      { label: "Views", before: "43K", after: "203,000+", icon: "eye" },
+      { label: "Likes", before: "876", after: "6,461+", icon: "heart" },
+      { label: "Shares", before: "21", after: "210+", icon: "share" },
+      { label: "comments", before: "7", after: "100+", icon: "bookmark" },
     ],
     highlight:
       "Created a content style that made complex trading concepts feel accessible to everyday people.",
@@ -181,24 +175,10 @@ export const caseStudies = [
       "Star Scout uses AI to scout and analyse football talent. My challenge was making cutting-edge technology feel exciting and accessible to coaches, scouts, and football fans — not just tech enthusiasts.",
     website: "https://www.tiktok.com/@starrscout00?_r=1&_t=ZS-96u5EvJvH2D",
     results: [
-      {
-        label: "Content Strategy",
-        before: "",
-        after: "Full Development",
-        icon: "bar-chart",
-      },
-      {
-        label: "Brand Voice",
-        before: "",
-        after: "Established",
-        icon: "target",
-      },
-      {
-        label: "Audience",
-        before: "",
-        after: "Football + Tech",
-        icon: "users",
-      },
+      { label: "Views", before: "2K", after: "80,000+", icon: "eye" },
+      { label: "Likes", before: "200", after: "40,000+", icon: "heart" },
+      { label: "Shares", before: "", after: "2,000+", icon: "share" },
+      { label: "Saves", before: "", after: "800+", icon: "bookmark" },
     ],
     highlight:
       "Bridged the gap between AI technology and football culture — making Star Scout relatable to both audiences.",
@@ -223,10 +203,10 @@ export const caseStudies = [
     description:
       "Managed full social media presence for a beauty brand, creating content that resonated with women who care about quality hair care. Drove exceptional shareability — 1,296 shares is extraordinary for an organic beauty post.",
     results: [
-      { label: "Views", before: "", after: "122,000+", icon: "eye" },
-      { label: "Likes", before: "", after: "26,000+", icon: "heart" },
-      { label: "Shares", before: "", after: "1,296", icon: "share" },
-      { label: "Saves", before: "", after: "791", icon: "bookmark" },
+      { label: "Views", before: "1K", after: "360,000+", icon: "eye" },
+      { label: "Likes", before: "100", after: "60,000+", icon: "heart" },
+      { label: "Shares", before: "", after: "3,000+", icon: "share" },
+      { label: "Saves", before: "", after: "500+", icon: "bookmark" },
     ],
     highlight:
       "1,296 organic shares — proof that the right content format creates genuine word-of-mouth.",
@@ -252,30 +232,10 @@ export const caseStudies = [
     description:
       "Developed an automated Point of Sale (POS) system that helps businesses manage sales transactions, inventory, customer records, and reporting from a centralized dashboard, reducing manual work and improving operational efficiency.",
     results: [
-      {
-        label: "Transactions Processed",
-        before: "",
-        after: "10,000+",
-        icon: "shopping-cart",
-      },
-      {
-        label: "Inventory Accuracy",
-        before: "",
-        after: "99%",
-        icon: "package",
-      },
-      {
-        label: "Sales Reports Generated",
-        before: "",
-        after: "5,000+",
-        icon: "bar-chart",
-      },
-      {
-        label: "Business Efficiency",
-        before: "",
-        after: "40% Faster",
-        icon: "trending-up",
-      },
+      { label: "Views", before: "13k", after: "19,000+", icon: "eye" },
+      { label: "Likes", before: "779", after: "1,350+", icon: "heart" },
+      { label: "Shares", before: "", after: "50+", icon: "share" },
+      { label: "comments", before: "", after: "20+", icon: "bookmark" },
     ],
     highlight:
       "Built a complete automated POS solution that simplifies sales tracking, inventory management, and business analytics in one platform.",
