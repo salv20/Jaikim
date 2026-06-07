@@ -21,14 +21,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://charlesjikeme.com",
+    url: "https://jaikim-smm.vercel.app",
     title: "Charles Jikeme — Social Media Growth Strategist",
     description:
       "Building Visibility Through Strategy, Consistency & Audience Psychology. 800,000+ Views Generated.",
     siteName: "Charles Jikeme Portfolio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/charles-jikeme-portrait.png",
         width: 1200,
         height: 630,
         alt: "Charles Jikeme — Social Media Growth Strategist",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "Charles Jikeme — Social Media Growth Strategist",
     description:
       "Building Visibility Through Strategy, Consistency & Audience Psychology.",
-    images: ["/og-image.jpg"],
+    images: ["/images/charles-jikeme-portrait.png"],
   },
   robots: {
     index: true,

@@ -15,7 +15,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-border/40 overflow-hidden">
+    <footer className="relative border-t border-electric/30 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-15 pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[160px] rounded-full bg-[color:var(--violet)]/5 blur-[80px] pointer-events-none" />
 
