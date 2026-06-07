@@ -339,9 +339,9 @@ export default function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
         href="#case-studies"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute z-10 cursor-pointer bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-xs text-muted-foreground font-mono tracking-widest uppercase">
+        <span className="text-xs relative text-muted-foreground font-mono tracking-widest uppercase">
           Scroll
         </span>
         <motion.span
