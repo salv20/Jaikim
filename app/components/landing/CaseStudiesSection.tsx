@@ -93,7 +93,6 @@ export default function CaseStudiesSection() {
             </motion.p>
           </div>
 
-          {/* Cards grid — 3 cols on xl so 5 cards sit cleanly */}
           <div
             ref={ref}
             className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mt-6"
@@ -126,10 +125,7 @@ export default function CaseStudiesSection() {
 
                 {/* Number + arrow */}
                 <div className="flex items-start justify-between mb-5">
-                  <span
-                    className="font-mono text-4xl font-bold leading-none select-none"
-                    // style={{ color: `${study.color}28` }}
-                  >
+                  <span className="font-mono text-4xl font-bold leading-none select-none">
                     {study.number}
                   </span>
                   <div
@@ -139,19 +135,19 @@ export default function CaseStudiesSection() {
                     style={{
                       background: `${study.color}12`,
                       border: `1px solid ${study.color}28`,
-                      color: study.color,
+                      // color: study.color,
                     }}
                   >
-                    <ArrowRight size={15} />
+                    <ArrowRight size={18} />
                   </div>
                 </div>
 
                 {/* Industry */}
+
                 <span
-                  className="inline-block px-2.5 py-1 rounded-full text-[11px] font-mono mb-4"
+                  className="inline-block px-2.5 py-1 rounded-full text-xs font-mono mb-4 text-foreground"
                   style={{
-                    background: `${study.color}10`,
-                    color: study.color,
+                    background: `${study.color}12`,
                     border: `1px solid ${study.color}25`,
                   }}
                 >

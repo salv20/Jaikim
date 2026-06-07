@@ -119,8 +119,8 @@ const CaseStudyModal = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-start justify-center p-4 sm:p-8 overflow-y-auto"
-      style={{ background: "rgba(0,0,0,0.82)", backdropFilter: "blur(10px)" }}
+      className="fixed inset-0 bg-white dark:bg-[rgba(0,0,0,0.82)] z-50 flex items-start justify-center p-4 sm:p-8 overflow-y-auto"
+      style={{ backdropFilter: "blur(10px)" }}
       onClick={onClose}
     >
       <motion.div
@@ -128,7 +128,7 @@ const CaseStudyModal = ({
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 36, scale: 0.97 }}
         transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full max-w-3xl my-8 rounded-3xl overflow-hidden"
+        className="relative metriccard w-full max-w-3xl my-8 rounded-3xl overflow-hidden"
         style={{
           background: "hsl(var(--background))",
           border: `1px solid ${study.color}28`,
@@ -162,7 +162,7 @@ const CaseStudyModal = ({
           </button>
 
           {/* Number */}
-          <p className="font-mono text-[11px] tracking-widest text-muted-foreground mb-2 uppercase">
+          <p className="font-mono text-[11px] tracking-widest text-foregrond mb-2 uppercase">
             Case Study {study.number}
           </p>
 

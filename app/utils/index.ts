@@ -223,11 +223,11 @@ export const caseStudies = [
     description:
       "Took a fintech startup from near-zero social presence to a thriving community. The company rebranded from Pay2View to Cluster Clear during our partnership — I navigated that transition seamlessly while maintaining growth momentum.",
     results: [
-      { label: "Followers", before: "37", after: "1,006+", icon: "users" },
+      { label: "Views", before: "43k", after: "203K+", icon: "users" },
       {
         label: "Total Likes",
         before: "3,071",
-        after: "93,200+",
+        after: "70,000+",
         icon: "heart",
       },
       { label: "Peak Video", before: "", after: "423,000+ Views", icon: "eye" },
@@ -236,7 +236,7 @@ export const caseStudies = [
     ],
     highlight:
       "Company underwent a full rebrand (Pay2View → Cluster Clear) mid-campaign — growth continued uninterrupted.",
-    color: "#00D4FF",
+    color: "#1bb8d8",
     media: [
       {
         src: "/images/pay2view/image.png",
